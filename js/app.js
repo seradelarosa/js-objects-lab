@@ -76,15 +76,27 @@ Exercise 5
 Solve Exercise 5 here:
 */
 
-for (let i = 0; i < pokemon.length; i++) {
-    // add first pokemon that have hp > 100, but only until the party is full
-    // can only have 6 pokemon in ur party, but account for one added earlier
-    if (pokemon[i].hp > 100 && game.party.length <=5) {
+//want it start at index 1, since index 0 (bulbasaur) is already in the party
+for (let i = 1; i < pokemon.length; i++) {
+    // add pokemon that have starter as true (only 4 total)
+    
+    //original if statement
+    //  if (pokemon[i].hp > 100 && game.party.length <=5) {
+    //     game.party.push(pokemon[i]);
+    // }
+    //but some pokemon with hp > 100 do not have evolved forms
+    //limited to a party of 6, but also there are only 4 starter pokemon
+    //exercise 7 requires pokemon evolved forms so I had to change this so the evolved forms are accurate
+
+    if (pokemon[i].starter === true) {
         game.party.push(pokemon[i]);
     }
 };
 
 console.log(game.party);
+
+//original game party:
+//bulbasaur, jigglypuff, wigglytuff, muk, rhydon, chansey
 
 // == Exercise 6 ==============================================
 
@@ -96,7 +108,6 @@ Exercise 6
 
 Solve Exercise 6 here:
 */
-
 
 //loop through gyms
 //game.gyms
@@ -113,3 +124,40 @@ for (i = 0; i < game.gyms.length; i++) {
 console.log(game.gyms);
 
 // == Exercise 7 ===============================================
+
+/*
+Exercise 7
+1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
+2. How would you replace the current starter Pokémon in your party with its evolved form?
+
+Hint: 
+  - Pokemon 1: Bulbasaur evolves into Pokemon 2: Ivysaur
+  - Pokemon 4: Charmander evolves into Pokemon 5: Charmeleon
+  - Pokemon 7: Squirtle evolves into Pokemon 8: Wartortle
+  - Pokemon 25: Pikachu evolves into Pokemon 26: Raichu
+
+More Hints: The existing starter Pokemon will be *replaced* in your party with the Pokemon it evolved into. When working with an array of objects, the splice() array method is ideal for replacing one element with another. 
+
+
+Solve Exercise 7 here:
+*/
+
+for (let i = 0; i < game.party.length; i++) {
+    let currentNumber = game.party[i].number;
+    let currentPokemonIndex = currentNumber - 1;
+    let nextPokemonIndex = currentPokemonIndex + 1;
+
+    game.party.splice(i, 1, pokemon[nextPokemonIndex]);
+};
+
+console.log(game.party)
+
+//original game party:
+//bulbasaur, charmander, blastoise, pikachu
+//new game party:
+//ivysaur, charmeleon, wartorle, raichu
+
+
+
+// == Exercise 8 ===================================================
+
