@@ -53,18 +53,37 @@ Solve Exercise 4 here:
 let starterPokemon = [];
 
 for (let i = 0; i < pokemon.length; i++) {
+    //if pokemon at index i has a true starter property...
     if (pokemon[i].starter === true) {
+        // then that pokemon is a starter pokemon
         starterPokemon = pokemon[i];
+        // add the starterPokemon to the game party
+        game.party.push(starterPokemon);
+        console.log(starterPokemon);
         //exit loop when one starter is found
         break;
     }
 };
 
-//add to game party
-if (starterPokemon) {
-    game.party.push(starterPokemon);
+// == Exercise 5 ==================================================
+
+/*
+Exercise 5
+1. Choose three more Pokémon from the `pokemon` array and add them to your party.
+2. Consider different attributes like 'type' or 'HP' for your selection. Which array method will you use to add them?
+
+
+Solve Exercise 5 here:
+*/
+
+for (let i = 0; i < pokemon.length; i++) {
+    // add first pokemon that have hp > 100, but only until the party is full
+    // can only have 6 pokemon in ur party, but account for one added earlier
+    if (pokemon[i].hp > 100 && game.party.length <=5) {
+        game.party.push(pokemon[i]);
+    }
 };
 
-console.log(starterPokemon);
+console.log(game.party);
 
-// == Exercise 5 ==================================================
+// == Exercise 7 ==============================================
