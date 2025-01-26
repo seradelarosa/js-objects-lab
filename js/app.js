@@ -21,8 +21,8 @@ const game = {
 // console.dir(pokemon, { maxArrayLength: null });
 // console.log(game);
 
-const starterPokemon = [pokemon[0], pokemon[3], pokemon[6], pokemon[25]];
-console.log(starterPokemon);
+// const starterPokemon = [pokemon[0], pokemon[3], pokemon[6], pokemon[25]];
+// console.log(starterPokemon);
 
 // == Exercise 3 ========================================
 
@@ -39,3 +39,32 @@ game.difficulty = "medium";
 console.log(game.difficulty);
 
 // == Exercise 4 ==========================================
+
+/*
+Exercise 4
+1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
+2. Add this Pokémon to the `game.party` array. Which array method will you use to add them?
+
+
+Solve Exercise 4 here:
+*/
+
+//set as array bc I want to add more starter pokemon later
+let starterPokemon = [];
+
+for (let i = 0; i < pokemon.length; i++) {
+    if (pokemon[i].starter === true) {
+        starterPokemon = pokemon[i];
+        //exit loop when one starter is found
+        break;
+    }
+};
+
+//add to game party
+if (starterPokemon) {
+    game.party.push(starterPokemon);
+};
+
+console.log(starterPokemon);
+
+// == Exercise 5 ==================================================
