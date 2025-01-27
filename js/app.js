@@ -358,12 +358,15 @@ This method should:
 Solve Exercise 14 here:
 */
 
+game.partyCount = function() {
+    let count = 0;
+    for (let i = 0; i < game.party.length; i++) {
+        count++;
+    }
+    return count;
+};
 
-
-
-
-
-
+console.log(game.partyCount());
 
 
 
