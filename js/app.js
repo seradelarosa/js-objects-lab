@@ -254,13 +254,17 @@ Exercise 12
 Solve Exercise 12 here:
 */
 
+for (i = 0; i < game.gyms.length; i++) {
+    //if the gym AT THE CURRENT INDEX (game.gyms[i].difficulty) < 3
+    if (game.gyms[i].difficulty < 6) {
+        //then set THAT gym to completed = true;
+        // === is an equality operator, it just checks the equality
+        //it doesn't assign that value =
+        game.gyms[i].completed = true;
+    };
+};
 
-
-
-
-
-
-
+console.log(game.gyms);
 
 
 
