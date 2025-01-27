@@ -255,7 +255,7 @@ Solve Exercise 12 here:
 */
 
 for (i = 0; i < game.gyms.length; i++) {
-    //if the gym AT THE CURRENT INDEX (game.gyms[i].difficulty) < 3
+    //if the gym AT THE CURRENT INDEX (game.gyms[i].difficulty) < 6
     if (game.gyms[i].difficulty < 6) {
         //then set THAT gym to completed = true;
         // === is an equality operator, it just checks the equality
@@ -382,11 +382,13 @@ Exercise 15
 Solve Exercise 15 here:
 */
 
+for (i = 0; i < game.gyms.length; i++) {
+    if (game.gyms[i].difficulty < 8) {
+        game.gyms[i].completed = true;
+    };
+};
 
-
-
-
-
+console.log(game.gyms);
 
 
 
