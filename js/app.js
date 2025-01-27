@@ -403,3 +403,4 @@ Exercise 16
 Solve Exercise 16 here:
 */
 
+console.log(game);
